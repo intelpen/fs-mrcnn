@@ -16,11 +16,11 @@ ROOT_DIR = os.path.abspath("../../")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
-from mrcnn import utils
-import mrcnn.model as modellib
-from mrcnn import visualize
 
-from samples.players import players
+import ml.mask_rcnn.mrcnn.model as modellib
+from ml.mask_rcnn.mrcnn import visualize
+
+from ml.mask_rcnn.samples.players import players
 # Directory to save logs and trained model
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 

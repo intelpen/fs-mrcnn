@@ -36,7 +36,7 @@ setup(
     version='2.1',
     url='https://github.com/matterport/Mask_RCNN',
     author='FV',
-    author_email='adrian.Balan@gmail.com',
+    author_email='adrian.balan@gmail.com',
     license='MIT',
     description='Mask R-CNN for object detection and instance segmentation',
     packages=["mrcnn"],

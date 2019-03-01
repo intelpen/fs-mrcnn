@@ -28,7 +28,7 @@ class FrozenMrcnnPlayerModel:
     def __init__(self):
         self.frozen_graph_filename = self.tf_model_save_path + "OcclusionFrozzen.pb"
 
-    def load_frozzen_model(self):
+    def load_frozen_model(self):
         with tf.gfile.GFile(self.frozen_graph_filename, "rb") as f:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(f.read())
@@ -58,7 +58,7 @@ model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 
 player_model = FrozenMrcnnPlayerModel()
-sess, graph = player_model.load_frozzen_model()
+sess, graph = player_model.load_frozen_model()
 player_model.print_tensors()
 
 
@@ -82,8 +82,6 @@ for file_name in file_names[20:]:
 
     # Anchors
     anchors = model.get_anchors(image_shape)
-    # Duplicate across the batch dimension because Keras requires it
-    # TODO: can this be optimized to avoid duplicating the anchors?
     anchors = np.broadcast_to(anchors, (model.config.BATCH_SIZE,) + anchors.shape)
     np.savetxt("anchors_players.csv", anchors[0], delimiter=",")
 

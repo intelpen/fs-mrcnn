@@ -2,7 +2,7 @@
 """
 Created on Fri Jan 19 17:14:29 2018
 
-@author: FootoDev
+@author: adrian
 """
 
 import os
