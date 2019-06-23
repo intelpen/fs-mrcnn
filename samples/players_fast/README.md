@@ -4,7 +4,7 @@ This model implements a custom mask-rcnn which runs at 17ms/image
 
 The model is somewhat a hybrid derived from the standard mask-rcnn with the folowing changes:
  
-* image size is reduced to 128*128px
+* image size is reduced to 256*256px
 * the resnet backbone is reduced from 101 layers to 5 layers
 * the fully connected layer of the FPN is reduced from 1024 to 128 nodes
 * the number of classes is reduced to 2
